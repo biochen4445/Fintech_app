@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fintech Stock Analyzer — AI Investment Commentary</title>
+  <meta name="description" content="AI-powered stock analysis with multi-agent investment commentary inspired by Warren Buffett, Benjamin Graham, Peter Lynch and more." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ====== Header ====== -->
+<header class="app-header">
+  <div class="header-inner">
+    <div class="logo"><span class="dot"></span>FinAnalyzer</div>
+    <div class="header-tagline">AI-Powered Stock Intelligence · US &amp; TW Markets</div>
+  </div>
+</header>
+
+<!-- ====== Main ====== -->
+<main class="main-content">
+
+  <!-- Search -->
+  <section class="search-section">
+    <h1 class="search-title">Stock Investment Analyzer</h1>
+    <p class="search-subtitle">Enter a US or Taiwan stock ticker for AI-powered investment commentary</p>
+    <form class="search-bar" id="searchForm">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" id="tickerInput" type="text" placeholder="AAPL, TSLA, 2330.TW …" autocomplete="off" spellcheck="false" />
+      <button class="search-btn" type="submit" id="searchBtn">Analyze</button>
+    </form>
+    <div class="quick-tickers">
+      <button type="button" class="quick-tick" data-ticker="AAPL">AAPL</button>
+      <button type="button" class="quick-tick" data-ticker="TSLA">TSLA</button>
+      <button type="button" class="quick-tick" data-ticker="MSFT">MSFT</button>
+      <button type="button" class="quick-tick" data-ticker="NVDA">NVDA</button>
+      <button type="button" class="quick-tick" data-ticker="2330.TW">2330.TW</button>
+      <button type="button" class="quick-tick" data-ticker="2317.TW">2317.TW</button>
+      <button type="button" class="quick-tick" data-ticker="2454.TW">2454.TW</button>
+    </div>
+  </section>
+
+  <!-- Loading -->
+  <div class="loading-overlay" id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">Fetching data &amp; running agent analysis…</div>
+  </div>
+
+  <!-- Error -->
+  <div class="error-box" id="errorBox"></div>
+
+  <!-- Results -->
+  <div id="results">
+    <!-- Stock Header -->
+    <div class="stock-header" id="stockHeader"></div>
+
+    <!-- Score Gauge + Bars -->
+    <div class="card" style="margin-bottom:1.5rem">
+      <div class="card-title">Overall Investment Score</div>
+      <div class="score-section">
+        <div class="gauge-container" id="gaugeContainer"></div>
+        <div class="score-bars" id="scoreBars"></div>
+      </div>
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="grid-6" id="metricsGrid"></div>
+
+    <!-- Bull vs Bear -->
+    <div class="bull-bear" id="bullBear"></div>
+
+    <!-- Price Chart -->
+    <div class="card chart-card">
+      <div class="card-title">6-Month Price History</div>
+      <canvas id="priceChart"></canvas>
+    </div>
+
+    <!-- AI Agents -->
+    <div class="agents-title">🤖 AI Investor Agent Commentary</div>
+    <div class="agents-grid" id="agentsGrid"></div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="app-footer">
+  FinAnalyzer · Powered by Yahoo Finance · For educational purposes only — not financial advice<br/>
+  Inspired by <a href="https://github.com/Fincept-Corporation/FinceptTerminal" style="color:var(--accent-blue)">FinceptTerminal</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
